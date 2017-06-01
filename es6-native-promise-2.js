@@ -13,7 +13,7 @@ var getRanking=function(url){
 	});
 }
 
-getRanking('http://localhost:3000/olympic/2016/ranking/42')
+getRanking('http://localhost:3000/olympic/2016/ranking/4')
       .then(function(data){
          console.log("Response "+data)
       })
