@@ -16,7 +16,6 @@ var getPromise=function(url){
 }
 
 
-
 getPromise(URL+'/olympic/2016/ranking/4')
       .then(function(data){
          console.log("Response 1 "+data);
