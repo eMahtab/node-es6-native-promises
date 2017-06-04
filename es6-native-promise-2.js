@@ -22,7 +22,7 @@ var getRanking=function(url){
 	return promise;
 }
 
-getRanking('http://localhost:3000/olympic/2016/ranking/4')
+getRanking('http://localhost:3000/olympic/2016/ranking/10')
       .then(function(data){
          console.log("Response "+data)
       })

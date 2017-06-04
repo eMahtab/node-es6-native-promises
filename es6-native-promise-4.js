@@ -1,24 +1,18 @@
-var http=require('http');
+var request=require('request');
 var URL='http://localhost:3000';
 
 var getPromise=function(url){
 	var promise= new Promise(function(resolve,reject){
-   var req=http.get(url,function(response){
-            if(response.statusCode < 200 || response.statusCode > 299){
-               reject(new Error('ErrorCode '+response.statusCode))
+      request(url,function(error,response,body){
+            if(error){
+               reject(new Error("Error occurred while making request"+error))
             }
-            var result="";
-            response.on('data',function(chunk){result +=chunk;} )
-            response.on('end',function(){resolve(result);} )
-      });
-
-   req.on('error',function(err){
-      console.error('Error with the request:', err.message); 
-      reject(err.message); 
-     });
-
-   req.end();
-
+            else if(response.statusCode < 200 || response.statusCode > 299){
+               reject(new Error('ErrorCode '+response.statusCode))
+            }else{
+               resolve(body)
+            }   
+      })
    });
 
    return promise;

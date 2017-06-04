@@ -1,5 +1,5 @@
 var promise = new Promise(function(resolve, reject) {
-  if (false) {
+  if (true) {
     resolve("Some Message");
   }
   else {
@@ -8,21 +8,21 @@ var promise = new Promise(function(resolve, reject) {
 });
 
 
-promise.then(function( message ) {
+/*promise.then(function( message ) {
               console.log( message );
              },
              function( err ) {
               console.log( err );
-            });
+            });*/
 
 
-/*promise
+promise
 .then(function( message ) {
   console.log( message );
 })
 .catch(function( err ) {
   console.log( err );
-});*/
+});
 
 
 
